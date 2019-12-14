@@ -1,11 +1,11 @@
 
 kubernetes {
     name = 'local-cluster'
-    serverUrl = 'https://kubernetes.default'
+    serverUrl = 'https://10.13.20.209:6443'
     skipTlsVerify = true
-    namespace = 'george'
-    jenkinsUrl = 'http://47.101.74.28:8080/'
-    credentialsId = ''
+    namespace = 'mgr-cms'
+    jenkinsUrl = 'http://10.13.32.94:32102'
+    credentialsId = 'jenkins-k8s-clientcert'
     containerCapStr = '1000'
     retentionTimeout = 5
     connectTimeout = 25
