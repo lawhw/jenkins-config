@@ -5,7 +5,7 @@ pipeline {
     environment {
         // TAG_NAME = "${env.BRANCH_NAME == 'master' ? 'stable' : 'test'}"
         TAG_NAME = 'latest'
-        REGISTRY_CREDENTIALS_ID = 'docker-registry-id'
+        REGISTRY_CREDENTIALS_ID = 'jenkins-registry-admin'
     }
 
     agent { label "master" }
