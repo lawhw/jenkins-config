@@ -17,6 +17,8 @@ pipeline {
                 sh "ls -lrt && pwd"
                 sh "mkdir -p ${JENKINS_HOME}/jenkins_config/"
                 sh "cp -rf * ${JENKINS_HOME}/jenkins_config/"
+                sh "cp -rf ${JENKINS_HOME}/consul-template /usr/bin "
+
             }
         }
 
