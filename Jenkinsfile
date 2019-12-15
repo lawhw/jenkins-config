@@ -23,7 +23,7 @@ pipeline {
         }
 
         stage('CONSUL TEMPLATE') {
-            steps { sh '${JENKINS_HOME}/consul-template -vault-addr "$VAULT_ADDR" -config "jenkins_config.hcl" -once -vault-retry-attempts=1 -vault-renew-token=false' }
+            steps { sh '${JENKINS_HOME}/consul-template -vault-addr "http://consul.es-jr.cn" -config "jenkins_config.hcl" -once -vault-retry-attempts=1 -vault-renew-token=false' }
         }
 
         stage('RUN GROOVY on master') {
