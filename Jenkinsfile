@@ -17,13 +17,13 @@ pipeline {
                 sh "ls -lrt && pwd"
                 sh "mkdir -p ${JENKINS_HOME}/jenkins_config/"
                 sh "cp -rf * ${JENKINS_HOME}/jenkins_config/"
-                sh "cp -rf ${JENKINS_HOME}/consul-template /usr/bin "
+                
 
             }
         }
 
         stage('CONSUL TEMPLATE') {
-            steps { sh 'consul-template -vault-addr "$VAULT_ADDR" -config "jenkins_config.hcl" -once -vault-retry-attempts=1 -vault-renew-token=false' }
+            steps { sh '${JENKINS_HOME}/consul-template -vault-addr "$VAULT_ADDR" -config "jenkins_config.hcl" -once -vault-retry-attempts=1 -vault-renew-token=false' }
         }
 
         stage('RUN GROOVY on master') {
