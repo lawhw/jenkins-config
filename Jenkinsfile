@@ -8,7 +8,7 @@ pipeline {
         REGISTRY_CREDENTIALS_ID = 'docker-registry-id'
     }
 
-    //agent { label "master" }
+    agent { label "master" }
 
     stages {
 
