@@ -1,6 +1,6 @@
 {
   "vault": {
-    "address": "https://vault.tooling.zone:8200"
+    "address": "https://consul.es-jr.cn:8500"
   },
   
   "template": {
