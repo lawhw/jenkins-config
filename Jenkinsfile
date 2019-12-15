@@ -35,16 +35,16 @@ pipeline {
         stage('Build dockerfiles') {
             steps {
                 script {
-                    docker.withRegistry('', "${REGISTRY_CREDENTIALS_ID}") {
+                    docker.withRegistry('registry.apps.es1688.k8s.local', "${REGISTRY_CREDENTIALS_ID}") {
                         docker.build("georgesre/jnlp-node-team1:${TAG_NAME}", "-f dockerfiles/node-team1/Dockerfile dockerfiles/node-team1").push()
                     }
-                    docker.withRegistry('', "${REGISTRY_CREDENTIALS_ID}") {
+                    docker.withRegistry('registry.apps.es1688.k8s.local', "${REGISTRY_CREDENTIALS_ID}") {
                         docker.build("georgesre/jnlp-node-team2:${TAG_NAME}", "-f dockerfiles/node-team2/Dockerfile dockerfiles/node-team2").push()
                     }
-                    docker.withRegistry('', "${REGISTRY_CREDENTIALS_ID}") {
+                    docker.withRegistry('registry.apps.es1688.k8s.local', "${REGISTRY_CREDENTIALS_ID}") {
                         docker.build("georgesre/jnlp-node-team3:${TAG_NAME}", "-f dockerfiles/node-team3/Dockerfile dockerfiles/node-team3").push()
                     }
-                    docker.withRegistry('', "${REGISTRY_CREDENTIALS_ID}") {
+                    docker.withRegistry('registry.apps.es1688.k8s.local', "${REGISTRY_CREDENTIALS_ID}") {
                         docker.build("georgesre/jnlp-node-team4:${TAG_NAME}", "-f dockerfiles/node-team4/Dockerfile dockerfiles/node-team4").push()
                     }
                 }
